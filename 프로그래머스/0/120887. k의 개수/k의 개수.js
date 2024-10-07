@@ -1,22 +1,9 @@
 function solution(i, j, k) {
-    var answer = 0;
+    var answer = '';
     
-    for(let index = i ; i <= j  ; i++) {
-        let target = String(i);
-
-        if(target.length == 1 ) {
-            if(target === String(k)) {
-                answer ++;
-            }
-        } else {
-            [...target].forEach((item) => {
-               
-                if(item === String(k)) {
-                    answer ++;
-                }
-            })
-        }
+    for(let index = i ; index <= j; index++) {
+        answer += String(index);
     }
     
-    return answer;
+    return answer.split(k).length - 1;
 }
