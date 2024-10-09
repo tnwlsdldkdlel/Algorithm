@@ -1,8 +1,14 @@
 function solution(balls, share) {
-    return factorial(BigInt(balls)) / (factorial(BigInt(share)) * factorial(BigInt(balls - share)));
+    var answer = 0;
+    var value = factorial(balls) / (factorial(share) * factorial(balls - share));
+    return Math.round(value);
 }
 
+
 function factorial(n) {
-    if (n === 0n || n === 1n) return 1n; 
-    return n * factorial(n - 1n);
+    if(n === 0 || n === 1) {
+        return 1;
+    }
+    
+    return n * factorial(n-1);
 }
